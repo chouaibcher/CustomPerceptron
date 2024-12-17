@@ -2,7 +2,6 @@
 @ First Name : Chouaib
 @ Last Name :  CHERIBET CHERIF
 @ 2023-2024
-All Right Reserved
 """
 
 from sklearn.datasets import load_iris
