@@ -1,6 +1,6 @@
 
 def saveOutput(fun,y):
-    save=input("do you wanna save output ?(yes/no):")
+    save=input("Do you want to save the output? (yes/no):")
     if str(save).lower()=='yes':
         print('Done')
         with open("output.txt","w") as file:
