@@ -9,17 +9,15 @@ class CustomPerceptron:
         self.bias = None
 
     def fit(self, X, y):
-        n_features = X.shape[1] #number of features
+        n_features = X.shape[1] 
         self.weights = np.zeros(n_features)
         self.bias = 0
         for _ in range(self.n_iters):
-           # print(self.n_iters)
             for index, x_i in enumerate(X):
                 linear_output = np.dot(x_i, self.weights) + self.bias
                 y_predicted = self.activation_func(linear_output)
 
                 update = self.lr * (y[index] - y_predicted)
-               #print(self.weights)
                 self.weights += update * x_i
                 self.bias += update
     
@@ -39,14 +37,6 @@ class CustomPerceptron:
         return accuracy
 
     def _threshold_func(self, x):
-        #if x<0:
-         #   return 0
-        #elif x>0:
-         #   return 1
-        #elif x>1:
-          #  return 2
-        #else :
-         #   return 2
         thresholds = [0, 1, 2]
         return np.digitize(x, thresholds, right=True)
     
