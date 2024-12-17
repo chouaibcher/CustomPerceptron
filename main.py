@@ -1,8 +1,3 @@
-"""
-@ First Name : Chouaib
-@ Last Name :  CHERIBET CHERIF
-@ 2023-2024
-"""
 
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
@@ -11,7 +6,7 @@ from CustomPerceptron import CustomPerceptron
 from MyFunctions import saveOutput
 from Colors import Colors
 
-print(f"########### {Colors.GREEN} CHERIBET CHEIF CHOUAIB {Colors.RESET}############")
+print(f"########### {Colors.GREEN} Start {Colors.RESET}############")
 def main():
     # load iris data from sklearn
     data=load_iris()
@@ -33,7 +28,7 @@ def main():
     ##################################################
 
 
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25, random_state=2)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
 
     print(f"----------- {Colors.YELLOW} Y' predicted{Colors.RESET} -------------")
     test=CustomPerceptron()
@@ -42,7 +37,7 @@ def main():
     print(f" fitted weights =  {test.getWeights()}")
     print(f" bias W0= {test.getBias()}")
 
-    Ypredicted=test.predict(x_test[:38])
+    Ypredicted=test.predict(x_test)
     print(f"{Colors.YELLOW}{Colors.BOLD}y'={Ypredicted} {Colors.RESET}")
     print('Accuracy:', test.score(x_train, y_train))
     print('Accuracy:', test.score(x_test, y_test))
@@ -63,7 +58,7 @@ def main():
     """    
 
     print(f"------------{Colors.GREEN} Y desired {Colors.RESET}------------")
-    print(f"y={y_test[:38]}")
+    print(f"y={y_test}")
 
     ## save output
     weights = test.getWeights()
